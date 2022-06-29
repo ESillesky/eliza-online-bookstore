@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xlmns="http://www.w3.org/1999/xhtml">
+	  <xlmns:th="http://www.thymeleaf.org">
+	 <head>
+        <meta charset="utf-8">
+        <title> Bookworm </title>
+        <link rel="icon" href="logo.ico">
+        <link rel="stylesheet" href="gallerystyle.css">
+        <link rel="stylesheet" href="headerstyle.css">
+        <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet'>   
+    </head>
+
+    <body>
+
+			<h1>test form element</h1>
+			<form method="POST" th:object="${book}">
+				
+					<h1>pick an action book</h1>
+					<div th:each="book : ${action}">
+						<input field="*{books}" type="checkbox" th:value="${book.id}"/> 
+						<span th:text="${book.title}">book</span></br>
+					</div>
+			
+			</form>
+	
+			
+			
+	
+		
+		</body>
+
+        <img th:src="@{/images/logo.png}" alt="Bookworm Logo" id="biglogo">
+        <a href="cart.html"><img th:src="@{/images/shopping_bag.png}" alt="shopping bag" id="shopping_bag" width="32"></a>
+        <form action="searchresults.html" method="post">
+        <input type="text" placeholder="Search for a Book.." id="search_bar"  name="booksearch">
+        <input type="image" th:src="@{/images/search.png}" alt="search glass" width="35" id="search">
+    </form>
+</header>
+
+<aside id="menu">
+    <ul class="one">
+      <li><a th:href="@{/main}">Home</a></li>
+        <li><a th:href="@{/main}">Books</a>
+           <ul class="two">
+               <li><a th:href="@{/booksbygenre}">Books by Genre</a></li>
+               <li><a th:href="@{/boooksbyauthor}">Books by Author</a></li>
+               <li><a th:href="@{/booksbyisbn}">Books by ISBN</a></li>
+              <li><a th:href="@{/booksbytitlea}">Books by Title</a></li>
+           </ul>
+       </li>
+       <li><a href="#">More</a>
+           <ul class="two">
+               <li><a a th:href="@{/freqquestion}">FAQs</a></li>
+           </ul>
+       </li>
+       <li><a th:href="@{/main}">My Account</a>
+           <ul class="two"> 
+               <li><a th:href="@{/myaccount}"> Login/Signup</a></li>
+               <li><a th:href="@{/editaccount}"> Edit My Account</a></li>
+           </ul>
+      </li>
+   </ul>
+</aside>
+
+
+<div class="grid-container">
+  <div class="item1"><img th:src="@{/images/13.png}" alt="shopping bag" id="shopping_bag" width="100"></div>
+  <div class="item2"><img th:src="@{/images/14.png}" alt="shopping bag" id="shopping_bag" width="100"></div>
+  <div class="item3"><img th:src="@{/images/23.png}" alt="shopping bag" id="shopping_bag" width="100"></div>
+  <div class="item4"><img th:src="@{/images/16.png}" alt="shopping bag" id="shopping_bag" width="100"></div>
+  <div class="item5"><img th:src="@{/images/17.png}" alt="shopping bag" id="shopping_bag" width="100"></div>
+  <div class="item6"><img th:src="@{/images/1.png}" alt="shopping bag" id="shopping_bag" width="100"></div>
+  <div class="item7"><img th:src="@{/images/24.png}" alt="shopping bag" id="shopping_bag" width="100"></div>
+</div>
+
+    <main>
+    <h1 class = "filterheader"> Filter by title</h1>
+    <ul class="filterbutton"> 
+        <li><a class="filterbutton" href="booksbytitlea.html">A to Z</a></li>
+        <li><a class="filterbutton" href="booksbytitled.html">Z to A</a></li>
+    </ul>
+    <div>
+
+    </div>
+
+    </main>
+       
+        <footer>
+        <a th:href="@{/myaccount}">My Account</a>
+        <a href="freqquestion.html">FAQ</a>
+        </footer>
+	  
+
+</html>

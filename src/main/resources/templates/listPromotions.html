@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>All user</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+
+</head>
+<body>
+	<div class="container text-center">
+		<div>
+        	    <form th:action="@{/addpromo}">
+        	    
+        	       <input type ="submit" value="Add promotion" />
+        	    </form> 
+        </div>
+        <div>
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+               <tr>
+                   <th>Promotion Name</th>
+                   <th>Promotion Code</th>
+                   <th>discount</th>
+                   <th>startDate</th>
+                   <th>endDate</th>
+               </tr>
+               </thead>
+               <tbody>
+                   
+                <tr th:each="promotion: ${promotionList}">
+                      <td th:text="${promotion.promotionName}">Name</td>
+                      <td th:text="${promotion.promotionCode}">Code</td>
+                      <td th:text="${promotion.discount}">Discount</td>
+                      <td th:text="${promotion.startDate}">Start Date</td>
+                      <td th:text="${promotion.endDate}">End Date</td>
+                </tr>
+                </tbody>
+        </table>
+        
+     </div>
+</body>
+</html>

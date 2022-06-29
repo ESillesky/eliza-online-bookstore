@@ -1,0 +1,51 @@
+<body>
+
+    <head>
+        <meta charset="utf-8">
+        <title> Bookworm </title>
+        <link rel="icon" href="logo.ico">
+        <link rel="stylesheet" href="signinstyle.css">
+        <link rel="stylesheet" href="headerstyle.css">
+        <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet'>
+    </head>
+
+    <header>
+        <img th:src=@{/images/logo.png} alt="Bookworm Logo" id="biglogo">
+        <a th:href="@{/cart}"><img th:src=@{/images/shopping_bag.png} alt="shopping bag" id="shopping_bag"
+                width="32"></a>
+        <form action="searchresults.html" method="post">
+            <input type="text" placeholder="Search for a Book.." id="search_bar" name="booksearch">
+            <input type="image" th:src=@{/images/search.png} alt="search glass" width="35" id="search">
+        </form>
+    </header>
+
+    <aside id="menu">
+        <ul class="one">
+            <li><a th:href="@{/main}">Home</a></li>
+            <li><a th:href="@{/main}">Books</a>
+                <ul class="two">
+                    <li><a th:href="@{/booksbygenre}">Books by Genre</a></li>
+                    <li><a th:href="@{/boooksbyauthor}">Books by Author</a></li>
+                    <li><a th:href="@{/booksbyisbn}">Books by ISBN</a></li>
+                    <li><a th:href="@{/booksbytitlea}">Books by Title</a></li>
+                </ul>
+            </li>
+            <li><a href="#">More</a>
+                <ul class="two">
+                    <li><a a th:href=@{/freqquestion}>FAQs</a></li>
+                </ul>
+            </li>
+            <li><a th:href="@{/main}">My Account</a>
+                <ul class="two">
+                    <li><a th:href=@{/myaccount}> Login/Signup</a></li>
+                    <li><a th:href=@{/editaccount}> Edit My Account</a></li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+    <main>
+        <h1 class="leftheader">Account created successfully! (A confirmation email has been sent to your email. Please
+            validate before signing in.)</h1>
+        <p id="clicktosign"><a th:href="@{/login}">Click here to sign in.</a></p>
+
+    </main>

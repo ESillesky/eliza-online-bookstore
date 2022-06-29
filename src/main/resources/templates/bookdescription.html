@@ -1,0 +1,301 @@
+
+<head>
+    <meta charset="utf-8">
+    <title> Bookworm </title>
+    <link rel="icon" href="logo.ico">
+    <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet'>    
+    <link rel="stylesheet" href="headerstyle.css">
+    <link rel="stylesheet" href="descriptioinstyle.css">
+   <style>
+  .colleft {
+  float: left;
+  width: 40%;
+}
+.colright {
+  float: left;
+  width: 60%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.filmcoverpic {
+  width: 400px;
+  float: left;
+  border-radius: 10px;
+  margin: 1em;
+}
+
+#title {
+  font-size: 60px;
+  margin: 0.3em;
+  padding: 0.3em;
+  background-color: #112d32;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+#descrip,#author {
+  font-size: 23px;
+  margin: 0.3em;
+  padding: 0.5em;
+  padding-left: 0.4em;
+  border-radius: 10px;
+}
+
+.inform {
+  background-color: #112d32;
+  margin: 0.3em;
+  padding: 0.5em;
+  border-radius: 10px;
+  text-align: center;
+  float: left;
+}
+
+#addtocart {
+  margin-left: 40.6em;
+  margin-top: -3.3em;
+  width: 100px;
+  height: 45px;
+  font-family: 'Dosis';
+  color: white;
+  border: 3px solid #112d32;
+  text-align: center;
+  background-color: #112d32;
+  border-radius: 10px;
+}
+
+#addshoppingbag {
+  margin-left: 31em;
+  margin-top: 2em;
+}
+
+#notavail {
+  padding: 1em;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  background-image: url("images/woodbackground.png");
+}
+#biglogo { 
+  width: 600px;
+  margin-left: 10em;
+  margin-bottom:-3em;
+}
+body {
+  margin-top: 1em;
+  border-radius: 25px;
+  width: 1100px;
+  box-shadow: 12px 0 12px -3px black, -12px 0 12px -3px black;
+  font-family: 'Dosis';
+  font-weight: 120;
+  font-stretch: condensed;
+  position: center;
+  margin-left: 10em;
+  margin-right: 8em;
+  background-color: white;
+  color: #88bdbc;
+}
+#search_bar {
+  font-family: 'Dosis';
+}
+header {
+  width: 1100px;
+  float: left;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  background: rgba(0, 0, 0, 0.10);
+}
+.leftheader {
+  padding-left: 0.6em;
+  padding-top: 0.4em;
+}
+#biglogo {
+  clear: right;
+  padding-top: 1em;
+  padding-left: 5em;
+}
+#search_bar {
+  float: right;
+  border: 2px solid #88bdbc;
+  border-radius: 25px;
+  margin-top: 3em;
+  margin-right: 4em;
+  height: 30px;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-left: -18em;
+}
+#search_bar::placeholder {
+  color: #88bdbc;
+  font-family: 'Dosis';
+}
+#search {
+  float: right;
+  padding-top: 2.6em;
+}
+#shopping_bag {
+  float: right;
+  padding-top: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+#menu {
+  float: left;
+  margin-bottom: 0.5em;
+}
+main {
+  clear: left;
+  padding-bottom: 3em;
+}
+#menu ul {
+  list-style-type: none;
+}
+#menu ul a:hover {
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.75);
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+}
+#menu ul.two a:hover {
+  border-radius: 0;
+}
+#menu li {
+  width: 275px;
+  background-color: #7a49c9;
+  text-align: center;
+}
+#menu a {
+  display: block;
+  padding-bottom: 1em;
+  padding-top: 1em;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #88bdbc;
+}
+#menu ul.one {
+  position: relative;
+}
+#menu ul.two {
+  display: none;
+  position: absolute;
+  z-index: 2;
+}
+#menu ul.one li {
+  float: left;
+  background: rgba(0, 0, 0, 0.10);
+}
+#menu ul.two li {
+  clear: left;
+  background: rgba(0, 0, 0, 0.75);
+}
+#menu ul.one li:hover ul.two {
+  display: block;
+}
+#menu ul.one a.home {
+  color: black;
+}
+footer {
+  padding-bottom: 2em;
+  text-align: center;
+}
+footer a {
+  padding: 0.5em;
+  text-decoration: none;
+  color: white;
+}
+#loggeduser {
+  font-size: 15px;
+  float: right;
+  margin-top: 2em;
+  margin-right: 1em;
+  color: #7eede5;
+}
+
+#logout {
+  clear: right;
+  float: right;
+  margin-top: -2.6em;
+  margin-right: 1em;
+  color: #7eede5;
+}
+
+    
+    </style>
+</head>
+<body>
+<header>
+        <img th:src=@{/images/logo.png} alt="Bookworm Logo" id="biglogo">
+        <a th:href="@{/cart}"><img th:src=@{/images/shopping_bag.png} alt="shopping bag" id="shopping_bag" width="32"></a>
+        <form action="searchresults.html" method="post">
+        <input type="text" placeholder="Search for a Book.." id="search_bar"  name="booksearch">
+        <input type="image" th:src=@{/images/search.png} alt="search glass" width="35" id="search">
+      </form>
+    </header>
+
+    <aside id="menu">
+      <ul class="one">
+        <li><a th:href="@{/main}">Home</a></li>
+        <li><a th:href="@{/main}">Books</a>
+          <ul class="two">
+            <li><a th:href="@{/booksbygenre}">Books by Genre</a></li>
+            <li><a th:href="@{/booksbyauthor}">Books by Author</a></li>
+            <li><a th:href="@{/booksbyisbn}">Books by ISBN</a></li>
+            <li><a th:href="@{/booksbytitlea}">Books by Title</a></li>
+          </ul>
+        </li>
+        <li><a href="#">More</a>
+          <ul class="two">
+            <li><a a th:href="@{/freqquestion}">FAQs</a></li>
+          </ul>
+        </li>
+        <li><a th:href="@{/main}">My Account</a>
+          <ul class="two">
+            <li><a th:href="@{/myaccount}"> Login/Signup</a></li>
+            <li><a th:href="@{/editaccount}"> Edit My Account</a></li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+
+    <main>
+		<h1 class="leftheader"> Book Details</h1>
+		<div th:each="bk:${book}" class="row">
+		<div class="colleft">
+		<p><img class="filmcoverpic" th:src="@{/images/bookCovers/{image}.png(image=${bk.id})}" width="100"></p>
+		</div>
+		<div class="colright">
+		<p id="title" th:text="${bk.title}"></p><br>
+		<p><b> Author:</b> [[${bk.author}]] </p><br>
+		<p><b> Description:</b> [[${bk.description}]] </p><br>
+		<p><b>Price:</b> $ [[${bk.price}]] </p><br>
+		<label><b>Genre:<b> </label><br>
+		<p class="inform" th:text="${bk.Genre}"></p>
+		
+		<form th:action="@{/bookdescription}" th:object="${book}" method="post">
+		    <input type="submit" value="Add to Cart" id="addtocart">
+		    <input type="hidden" th:field=*{id}>
+		    <input type="hidden" th:field=*{title}>
+		    <input type="hidden" th:field=*{author}>
+		    <input type="hidden" th:field=*{price}>
+		    <input type="hidden" th:field=*{genre}>
+		    <label><b>Quantity:<b> </label>
+		    <input type="number" min="1" th:field=*{quantity} > 
+		</form>
+
+    </main>
+    </div>
+    </div>
+
+    <footer>
+      <a th:href="@{/myaccount}">My Account</a>
+      <a th:href="@{/freqquestion}">FAQ</a>
+    </footer>

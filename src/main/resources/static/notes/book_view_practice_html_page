@@ -1,0 +1,25 @@
+
+<html xlmns="http://www.w3.org/1999/xhtml">
+	  xlmns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<title>Bookworm</title>
+	</head>
+	
+	<body>
+		<h1>test form element</h1>
+		<form method="POST" th:object="${book}">
+			
+				<h1>pick an action book</h1>
+				<div th:each="book : ${thriller}">
+					<input field="*{books}" type="checkbox" th:value="${book.id}"/> 
+					<span th:text="${book.title}">book</span></br>
+				</div>
+		<button>submit</button>
+		</form>
+		
+		
+	</body>
+
+	
+	

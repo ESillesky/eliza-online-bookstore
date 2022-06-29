@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>All user</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="defaultstyle.css">
+    <link rel="stylesheet" href="headerstyle.css">
+        <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet'>   
+</head>
+<header>
+        <img th:src="@{/images/logo.png}" alt="Bookworm Logo" id="biglogo">
+        <a th:href="@{/cart}"><img th:src=@{/images/shopping_bag.png} alt="shopping bag" id="shopping_bag" width="32"></a>
+        <form action="searchresults.html" method="post">
+        <input type="text" placeholder="Search for a Book.." id="search_bar"  name="booksearch">
+        <input type="image" th:src="@{/images/search.png}" alt="search glass" width="35" id="search">
+    </form>
+</header>
+
+<aside id="menu">
+    <ul class="one">
+      <li><a th:href="@{/main}">Home</a></li>
+        <li><a th:href="@{/main}">Books</a>
+           <ul class="two">
+               <li><a th:href="@{/booksbygenre}">Books by Genre</a></li>
+               <li><a th:href="@{/boooksbyauthor}">Books by Author</a></li>
+               <li><a th:href="@{/booksbyisbn}">Books by ISBN</a></li>
+              <li><a th:href="@{/booksbytitlea}">Books by Title</a></li>
+           </ul>
+       </li>
+       <li><a href="#">More</a>
+           <ul class="two">
+               <li><a a th:href="@{/freqquestion}">FAQs</a></li>
+           </ul>
+       </li>
+       <li><a th:href="@{/main}">My Account</a>
+           <ul class="two"> 
+               <li><a th:href="@{/myaccount}"> Login/Signup</a></li>
+               <li><a th:href="@{/editaccount}"> Edit My Account</a></li>
+           </ul>
+      </li>
+   </ul>
+</aside>
+
+<body>
+	<div class="container text-center">
+		<div>
+        	       <p>
+        	       Order History
+        	        </p>
+     
+        </div>
+        
+        <div>
+         <table class="table table-striped table-bordered">
+             <thead class="thead-dark">
+                <tr>
+                  <th>orderID</th>
+                    <th>orderDate</th>
+					<th>confirmationNumber</th>
+                    <th>orderTotal</th>
+                    <th>amountPurchased</th>               
+                    <th>itemsPurchased</th>
+                   
+                </tr>
+                </thead>
+                <tbody>        
+                      <tr th:each="order, iStat: ${orderHistory}">
+                      <td th:text="${order.orderID}">Order ID</td>
+                      <td th:text="${order.orderDate}">Order date</td>
+                      <td th:text="${order.confirmationNumber}">Confirmation number</td>
+                      <td th:text="${order.orderTotal}">Order total</td>
+                      <td th:text="${order.amountPurchased}">Amount purchased</td>
+                      <td th:text="${order.itemsPurchased}">Items purchased</td>
+           
+                 </tr>
+                 </tbody>
+         </table>
+      </div>   
+</body>
+</html>

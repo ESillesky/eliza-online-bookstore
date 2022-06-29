@@ -1,0 +1,47 @@
+.questionboxes {
+  border: 3px solid #88bdbc;
+  float: left;
+  width: 300px;
+  border-radius: 10px;
+  margin: 17px;
+  padding: 0.8em;
+  background-color: #88bdbc;
+  color: #112d32;
+  height: 200px;
+  display:block;
+}
+
+.questionboxes h2 {
+  margin-bottom: 0.5em;
+  background-color: #112d32;
+  color: #88bdbc;
+  padding: 0.5em;
+  border-radius: 10px;
+}
+
+#moreinfobox {
+  border: 3px solid #88bdbc;
+  float: left;
+  width: 1030px;
+  border-radius: 10px;
+  margin: 17px;
+  padding: 0.8em;
+  background-color: #88bdbc;
+  color: #112d32;
+  text-align: center;
+}
+
+#moreinfobox h2 {
+  background-color: #112d32;
+  border-radius: 10px;
+  padding: 0.3em;
+  color: #88bdbc;
+  margin-bottom: 0.5em;
+}
+footer {
+  clear: left;
+}
+
+#link {
+  color: #112d32;
+}

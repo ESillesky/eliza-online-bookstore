@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  background-image: url("images/woodbackground.png");
+}
+#biglogo { 
+  width: 600px;
+  margin-left: 10em;
+  margin-bottom:-3em;
+}
+body {
+  margin-top: 1em;
+  border-radius: 25px;
+  width: 1100px;
+  box-shadow: 12px 0 12px -3px black, -12px 0 12px -3px black;
+  font-family: 'Dosis';
+  font-weight: 120;
+  font-stretch: condensed;
+  position: center;
+  margin-left: 10em;
+  margin-right: 8em;
+  background-color: white;
+  color: #88bdbc;
+}
+#search_bar {
+  font-family: 'Dosis';
+}
+header {
+  width: 1100px;
+  float: left;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  background: rgba(0, 0, 0, 0.10);
+}
+.leftheader {
+  padding-left: 0.6em;
+  padding-top: 0.4em;
+}
+#biglogo {
+  clear: right;
+  padding-top: 1em;
+  padding-left: 5em;
+}
+#search_bar {
+  float: right;
+  border: 2px solid #88bdbc;
+  border-radius: 25px;
+  margin-top: 3em;
+  margin-right: 4em;
+  height: 30px;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-left: -18em;
+}
+#search_bar::placeholder {
+  color: #88bdbc;
+  font-family: 'Dosis';
+}
+#search {
+  float: right;
+  padding-top: 2.6em;
+}
+#shopping_bag {
+  float: right;
+  padding-top: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+#menu {
+  float: left;
+  margin-bottom: 0.5em;
+}
+main {
+  clear: left;
+  padding-bottom: 3em;
+}
+#menu ul {
+  list-style-type: none;
+}
+#menu ul a:hover {
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.75);
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+}
+#menu ul.two a:hover {
+  border-radius: 0;
+}
+#menu li {
+  width: 275px;
+  background-color: #7a49c9;
+  text-align: center;
+}
+#menu a {
+  display: block;
+  padding-bottom: 1em;
+  padding-top: 1em;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #88bdbc;
+}
+#menu ul.one {
+  position: relative;
+}
+#menu ul.two {
+  display: none;
+  position: absolute;
+  z-index: 2;
+}
+#menu ul.one li {
+  float: left;
+  background: rgba(0, 0, 0, 0.10);
+}
+#menu ul.two li {
+  clear: left;
+  background: rgba(0, 0, 0, 0.75);
+}
+#menu ul.one li:hover ul.two {
+  display: block;
+}
+#menu ul.one a.home {
+  color: black;
+}
+footer {
+  padding-bottom: 2em;
+  text-align: center;
+}
+footer a {
+  padding: 0.5em;
+  text-decoration: none;
+  color: white;
+}
+#loggeduser {
+  font-size: 15px;
+  float: right;
+  margin-top: 2em;
+  margin-right: 1em;
+  color: #7eede5;
+}
+
+#logout {
+  clear: right;
+  float: right;
+  margin-top: -2.6em;
+  margin-right: 1em;
+  color: #7eede5;
+}

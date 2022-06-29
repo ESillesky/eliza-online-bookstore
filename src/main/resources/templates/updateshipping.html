@@ -1,0 +1,76 @@
+
+<head>
+    <meta charset="utf-8">
+    <title> Bookworm </title>
+    <link rel="icon" href="logo.ico">
+    <link rel="stylesheet" href="headerstyle.css">
+    <link rel="stylesheet" href="editaccountstyle.css">
+    <link rel="stylesheet" href="signupstyle.css">
+    <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet'>
+</head>
+
+<body>
+<header>
+        <img th:src=@{/images/logo.png} alt="Bookworm Logo" id="biglogo">
+        <a th:href="@{/cart}"><img th:src=@{/images/shopping_bag.png} alt="shopping bag" id="shopping_bag" width="32"></a>
+        <form action="searchresults.html" method="post">
+        <input type="text" placeholder="Search for a Book.." id="search_bar"  name="booksearch">
+        <input type="image" th:src=@{/images/search.png} alt="search glass" width="35" id="search">
+    </form>
+</header>
+
+<aside id="menu">
+    <ul class="one">
+      <li><a th:href="@{/main}">Home</a></li>
+        <li><a th:href="@{/main}">Books</a>
+           <ul class="two">
+               <li><a th:href="@{/booksbygenre}">Books by Genre</a></li>
+               <li><a th:href="@{/boooksbyauthor}">Books by Author</a></li>
+               <li><a th:href="@{/booksbyisbn}">Books by ISBN</a></li>
+              <li><a th:href="@{/booksbytitlea}">Books by Title</a></li>
+           </ul>
+       </li>
+       <li><a href="#">More</a>
+           <ul class="two">
+               <li><a a th:href="@{/freqquestion}">FAQs</a></li>
+           </ul>
+       </li>
+       <li><a th:href="@{/main}">My Account</a>
+           <ul class="two"> 
+               <li><a th:href="@{/myaccount}"> Login/Signup</a></li>
+               <li><a th:href="@{/editaccount}"> Edit My Account</a></li>
+           </ul>
+      </li>
+   </ul>
+</aside>
+<fieldset id="addressinfo">
+    <form th:object="${currentUser}" th:action="@{/updatesuccess}" method="post">
+    <p>Please fill this form to update your shipping address information.</p>
+    <label for="line1card"> Billing Address: </label>
+        <input type="text" id="line1card" name ="line1card" 
+            th:field=*{billingAddress1}><br>
+        <label for="line2card"> </label>
+        <input type="text" id="line2card" name ="line2card" 
+            th:field=*{billingAddress2}><br>
+        <label for="citycard"> Billing City: </label>
+        <input type="text" id="citycard" name ="citycard"    
+            th:field=*{billingCity}><br>
+        <label for="state"> Billing State: </label>
+        <input type="text" id="state" name ="state"   
+            th:field=*{billingState}><br>
+        <label for="zip"> Billing Zip Code: </label>
+        <input type="text" id="zip" name ="zip"      
+            th:field=*{billingZipCode}><br>
+</fieldset>  
+<fieldset id="processinfo">
+    <legend>Update Shipping Address Information</legend>
+    <input type="submit" value="Submit" id="submit">
+    <input type="reset" value="Start over" id="button">
+</fieldset>
+<a id="cancelfoot" th:href="@{/editaccount}">Cancel</a>
+</form>
+    </div>
+    <footer>
+         <a th:href="@{/myaccount}">My Account</a>
+        <a th:href="@{/freqquestion}">FAQ</a>
+    </footer>

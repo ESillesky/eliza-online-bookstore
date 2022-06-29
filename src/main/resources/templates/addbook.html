@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <body>
+        <head>
+            <meta charset="utf-8">
+            <title> Bookworm </title>
+            <link rel="icon" href="logo.ico">
+            <link rel="stylesheet" href="signinstyle.css">
+            <link rel="stylesheet" href="headerstyle.css">
+             <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet'>   
+        </head>
+    
+        <header>
+            <img th:src=@{/images/logo.png} alt="Bookworm Logo" id="biglogo">
+           
+    </header>
+    
+    <aside id="menu">
+         <ul class="one">
+           <li><a th:href="@{/main}">Home</a></li>
+             <li><a th:href="@{/main}">Books</a>
+                <ul class="two">
+                    <li><a th:href="@{/booksbygenre}">Books by Genre</a></li>
+                    <li><a th:href="@{/boooksbyauthor}">Books by Author</a></li>
+                    <li><a th:href="@{/booksbyisbn}">Books by ISBN</a></li>
+                   <li><a th:href="@{/booksbytitlea}">Books by Title</a></li>
+                </ul>
+            </li>
+            <li><a href="#">More</a>
+                <ul class="two">
+                    <li><a a th:href=@{/freqquestion}>FAQs</a></li>
+                </ul>
+            </li>
+            <li><a th:href="@{/main}">My Account</a>
+                <ul class="two"> 
+                    <li><a th:href=@{/myaccount}> Login/Signup</a></li>
+                    <li><a th:href=@{/editaccount}> Edit My Account</a></li>
+                </ul>
+           </li>
+        </ul>
+    </aside>
+
+    <fieldset id="customerinfo">
+        <form name="addbook_form" th:object:"${book}" th:action="@{/addBookSuccess}"  method="post"> 
+            <legend>Please fill this form to add a book</legend>
+            <script src="validatebook.js"></script>
+            <label for="booktitle">Book Title: </label>
+            <input type="text" id="booktitle" name="booktitle"  th:feild=*{title} required>
+            <span id="error1">*</span><br>
+            <label for="author">Author: </label>
+            <input type="text" id="author" name="author" th:feild=*{author} required>
+            <span id="error2">*</span><br>
+            <label for="descrip"> Description: </label>
+            <input type="text" id="descrip" name="descrip" th:feild=*{description} required>
+            <span id="error3">*</span><br>
+            <label for="releaseyear"> Release Year: </label>
+            <input type="number" id="releaseyear" name="releaseyear" th:feild=*{releaseYear} min="1"  max="2100" required>
+            <span id="error4">(YYYY) *</span><br>
+            <label for="isbn"> ISBN: </label>
+            <input type="text" id="isbn" name="isbn" maxlength="13" th:feild=*{isbn} required>
+            <span id="error5">*</span><br>
+            <label for="bprice">Price: </label>
+            <input type="number" id="bprice" name="bprice" min="0" step="any" th:feild=*{price} required>
+            <span id="error6">*</span><br>
+             <label for="genre">Genre: </label>
+            <input type="text" id="genre" name="genre" th:feild=*{genre} required>
+            <label for="rating">Rating: </label>
+            <input type="number" id="rating" min="0" name="rating"  step="any" max="10" th:feild=*{rating} required>
+            <span id="error7">*</span><br>
+            <label for="img">Select image:</label>
+            <input type="file" id="img" name="img" accept="images/bookCovers/*"> 
+            <span id="error8">*</span><br>
+    </fieldset>
+
+    <fieldset id="processinfo">
+        <legend>Create Promotion</legend>
+        <input type="submit" value="Submit" id="submit">
+        <input type="reset" value="Start over" id="button">
+    </fieldset>
+    </form>
+    </div>
+    <footer>
+        <a href="myaccount.html">My Account</a>
+        <a href="freqquestion.html">FAQ</a>
+    </footer>

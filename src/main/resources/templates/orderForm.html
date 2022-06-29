@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xlmns="http://www.w3.org/1999/xhtml">
+	  xlmns:th="http://www.thymeleaf.org">
+	  
+	<head>
+		<title>Bookworm</title>
+	</head>
+	
+	<body>
+		<h1>test order form</h1>
+		<form method="POST" th:action="@{/orders}" th:object="${bookOrder}">
+		
+		
+			<label for="deliveryName">Name:</label>
+			<input type="text" field="*{deliveryName}"/>
+			<br/>
+			
+			<label for="deliveryStreet">Street:</label>
+			<input type="text" field="*{deliveryStreet}"/>
+			<br/>
+			
+			<label for="cardNumber">Card Num:</label>
+			<input type="text" field="*{cardNumber}"/>
+			<br/>
+			
+			<input type="submit" value="Submit Order"/>
+			
+		</form>
+	</body>
+</html>

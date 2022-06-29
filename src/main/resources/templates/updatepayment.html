@@ -1,0 +1,137 @@
+<head>
+    <meta charset="utf-8">
+    <title> Bookworm </title>
+    <link rel="icon" href="logo.ico">
+    <link rel="stylesheet" href="headerstyle.css">
+    <link rel="stylesheet" href="editaccountstyle.css">
+    <link rel="stylesheet" href="signupstyle.css">
+    <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet'>
+</head>
+
+<body>
+    <header>
+        <img th:src=@{/images/logo.png} alt="Bookworm Logo" id="biglogo">
+        <a th:href="@{/cart}"><img th:src=@{/images/shopping_bag.png} alt="shopping bag" id="shopping_bag"
+                width="32"></a>
+        <form action="searchresults.html" method="post">
+            <input type="text" placeholder="Search for a Book.." id="search_bar" name="booksearch">
+            <input type="image" th:src=@{/images/search.png} alt="search glass" width="35" id="search">
+        </form>
+    </header>
+
+    <aside id="menu">
+        <ul class="one">
+            <li><a th:href="@{/main}">Home</a></li>
+            <li><a th:href="@{/main}">Books</a>
+                <ul class="two">
+                    <li><a th:href="@{/booksbygenre}">Books by Genre</a></li>
+                    <li><a th:href="@{/boooksbyauthor}">Books by Author</a></li>
+                    <li><a th:href="@{/booksbyisbn}">Books by ISBN</a></li>
+                    <li><a th:href="@{/booksbytitlea}">Books by Title</a></li>
+                </ul>
+            </li>
+            <li><a href="#">More</a>
+                <ul class="two">
+                    <li><a a th:href="@{/freqquestion}">FAQs</a></li>
+                </ul>
+            </li>
+            <li><a th:href="@{/main}">My Account</a>
+                <ul class="two">
+                    <li><a th:href="@{/myaccount}"> Login/Signup</a></li>
+                    <li><a th:href="@{/editaccount}"> Edit My Account</a></li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+    <fieldset id="customerinfo">
+        <legend>Here are your payment options.</legend>
+        <legend> Payment Option 1:</legend>
+        <form th:object="${currentUser}" th:action="@{/updatepayment}" method="post">
+            <script src="validatecard.js"></script>
+            <!-- payment option 1 -->
+            <label for="fnamecard1">Name on Card: </label>
+            <input type="text" id="fnamecard1" name="fnamecard1" th:field=*{payment1.nameOnCard}>
+            <span id="error1">*</span><br>
+            <label for="cardChoice1">Card Type: </label>
+           <select name="cardChoice1" id="cardChoice1"  th:field=*{payment1.cardTypeStr}>
+                <option th:value="'VISA'">VISA</option>
+                <option th:value="'Mastercard'">Mastercard</option>
+                <option th:value="'Discover'">Discover</option>
+                <option th:value="'AMEX'">AMEX</option>
+            </select>            <span id="error2">*</span><br>
+            <label for="cardnum1">Card Number: </label>
+            <input type="text" id="cardnum1" name="cardnum1" minlength="16" maxlength="16"
+                th:field=*{payment1.cardNumberStr} required>
+            <span id="error3">*</span><br>
+            <label for="expiremonth1">Expiration Month: </label>
+            <input type="number" min="1" max="12" id="expiremonth1" name="expiremonth1"
+                th:field=*{payment1.expirationMonth} required>
+            <span id="error4">*</span><br>
+            <label for="expireyear1">Expiration Year: (YYYY)</label>
+            <input type="number" min="2021" max="2100" id="expireyear1" name="expireyear1"
+                th:field=*{payment1.expirationYear} required><br>
+            <span id="error5">*</span><br>
+            
+            <!-- payment option 2 -->
+            <legend> Payment Option 2:</legend>
+            <label for="fnamecard2">Name on Card: </label>
+            <input type="text" id="fnamecard2" name="fnamecard2" th:field=*{payment2.nameOnCard}>
+            <span id="error6">*</span><br>
+            <label for="cardChoice2">Card Type: </label>
+            <select name="cardChoice2" id="cardChoice2"  th:field=*{payment2.cardTypeStr}>
+                <option th:value="'VISA'">VISA</option>
+                <option th:value="'Mastercard'">Mastercard</option>
+                <option th:value="'Discover'">Discover</option>
+                <option th:value="'AMEX'">AMEX</option>
+            </select>            
+            <span id="error7">*</span><br>
+            <label for="cardnum2">Card Number: </label>
+            <input type="text" id="cardnum2" name="cardnum2" minlength="16" maxlength="16"
+                th:field=*{payment2.cardNumberStr}>
+            <span id="error8">*</span><br>
+            <label for="expiremonth2">Expiration Month:</label>
+            <input type="number" min="1" max="12" id="expiremonth2" name="expiremonth2"
+                th:field=*{payment2.expirationMonth}>
+            <span id="error9">*</span><br>
+            <label for="expireyear2">Expiration Year: (YYYY)</label>
+            <input type="number" min="2021" max="2100" id="expireyear2" name="expireyear2"
+                th:field=*{payment2.expirationYear}><br>
+            <span id="error10">*</span><br>
+            <!-- payment option 3 -->
+            <legend> Payment Option 3</legend>
+            <label for="fnamecard3">Name on Card: </label>
+            <input type="text" id="fnamecard3" name="fnamecard3" th:field=*{payment3.nameOnCard}>
+            <span id="error11">*</span><br>
+            <label for="cardChoice3">Card Type: </label>
+            <select name="cardChoice3" id="cardChoice3"  th:field=*{payment3.cardTypeStr}>
+                <option th:value="'VISA'">VISA</option>
+                <option th:value="'Mastercard'">Mastercard</option>
+                <option th:value="'Discover'">Discover</option>
+                <option th:value="'AMEX'">AMEX</option>
+            </select>
+            <span id="error12">*</span><br>
+            <label for="cardnum3">Card Number: </label>
+            <input type="text" id="cardnum3" name="cardnum3" minlength="16" maxlength="16"
+                th:field=*{payment3.cardNumberStr}>
+            <span id="error13">*</span><br>
+            <label for="expiremonth3">Expiration Month: </label>
+            <input type="number" min="1" max="12" id="expiremonth3" name="expiremonth"
+                th:field=*{payment3.expirationMonth}>
+            <span id="error14">*</span><br>
+            <label for="expireyear3">Expiration Year: (YYYY)</label>
+            <input type="number" min="2021" max="2100" id="expireyear3" name="expireyear3"
+                th:field=*{payment3.expirationYear}><br>
+            <span id="error15">*</span><br>
+    </fieldset>
+    <fieldset id="processinfo">
+        <legend>Update Payment Information</legend>
+        <input type="submit" value="Submit" id="submit">
+        <input type="reset" value="Start over" id="button">
+    </fieldset>
+    <a id="cancelfoot" th:href="@{/editaccount}">Cancel</a>
+    </form>
+    </div>
+    <footer>
+        <a th:href="@{/myaccount}">My Account</a>
+        <a th:href="@{/freqquestion}">FAQ</a>
+    </footer>

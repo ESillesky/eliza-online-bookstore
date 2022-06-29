@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <body>
+        <head>
+            <meta charset="utf-8">
+            <title> Bookworm </title>
+            <link rel="icon" href="logo.ico">
+            <link rel="stylesheet" href="headerstyle.css">
+            <link rel="stylesheet" href="signupstyle.css">
+             <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet'>   
+        </head>
+    
+        <header>
+            <img th:src=@{/images/logo.png} alt="Bookworm Logo" id="biglogo">
+          
+    </header>
+    
+    <aside id="menu">
+         <ul class="one">
+           <li><a th:href="@{/main}">Home</a></li>
+             <li><a th:href="@{/main}">Books</a>
+                <ul class="two">
+                    <li><a th:href="@{/booksbygenre}">Books by Genre</a></li>
+                    <li><a th:href="@{/boooksbyauthor}">Books by Author</a></li>
+                    <li><a th:href="@{/booksbyisbn}">Books by ISBN</a></li>
+                   <li><a th:href="@{/booksbytitlea}">Books by Title</a></li>
+                </ul>
+            </li>
+            <li><a href="#">More</a>
+                <ul class="two">
+                    <li><a a th:href=@{/freqquestion}>FAQs</a></li>
+                </ul>
+            </li>
+            <li><a th:href="@{/main}">My Account</a>
+                <ul class="two"> 
+                    <li><a th:href=@{/myaccount}> Login/Signup</a></li>
+                    <li><a th:href=@{/editaccount}> Edit My Account</a></li>
+                </ul>
+           </li>
+        </ul>
+    </aside>
+    <fieldset id="customerinfo">
+        <form name="promotion_form" th:action="@{/promotionsuccess}" method="post"  
+           th:object="${newPromotion}"> 
+            <legend>Please fill this form to add a promotion</legend>
+            <script src="validatepromotion.js"></script>
+            <label for="promocode">Promotion Name: </label>
+            <input type="text" id="promocode" name="promocode"  
+                th:field=*{promotionName} required>
+            <span id="error1">*</span><br>
+            <label for="promocode">Promotion Code: </label>
+            <input type="text" id="promocode" name="promocode" 
+                minlength="6" maxlength="6" th:field=*{promotionCode} required>
+            <span id="error2">*</span><br>
+            <label for="discount">Discount: </label>
+            <input type="number"  step="any" min="0" max="100" id="discount" name="discount" 
+                th:field=*{discount} required>
+            <span id="error3">*</span><br>
+            <label for="sDate"> Start Date: </label>
+            <input type="number" step="1" min=1 id="sDate" name="sDate" placeholder="(MMDDYYYY)"
+                th:field=*{startDate} required>
+            <span id="error4">*</span><br>
+            <label for="eDate"> End Date: </label>
+            <input type="number" step="1" min=1 id="eDate" name="eDate" placeholder="(MMDDYYYY)"
+                th:field=*{endDate} required>
+            <span id="error5">*</span><br>
+
+    <fieldset id="processinfo">
+        <legend>Create Promotion</legend>
+        <input type="submit" value="Submit" id="submit">
+        <input type="reset" value="Start over" id="button">
+    </fieldset>
+    </form>
+    </div>
+    <footer>
+        <a href="myaccount.html">My Account</a>
+        <a href="freqquestion.html">FAQ</a>
+    </footer>

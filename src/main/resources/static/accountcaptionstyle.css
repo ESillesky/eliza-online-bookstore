@@ -1,0 +1,24 @@
+main #signin {
+  padding-top: 3em;
+  padding-left: 5em;
+}
+
+main #signup {
+  margin-top: -1em;
+  padding-left: 22em;
+}
+
+main p {
+  font-size: 35px;
+}
+main a {
+  background-color: #112d32;
+  border: 3px solid #112d32;
+  padding: 0.5em;
+  border-radius: 10px;
+  color: #88bdbc;
+}
+
+footer {
+  padding-top: 3em;
+}
